@@ -1,0 +1,245 @@
+:root {
+    --primary: #6366f1;
+    --primary-dark: #4f46e5;
+    --success: #10b981;
+    --bg: #f8fafc;
+    --text: #1e293b;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+.logout-btn {
+    background: #f1f5f9;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.logout-btn:hover {
+    background: #e2e8f0;
+}
+
+/* Layout */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 2rem;
+    padding: 2rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.welcome-banner {
+    margin-bottom: 2rem;
+}
+
+.welcome-banner h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Cards & Grid */
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.assignment-box {
+    border: 1px solid #e2e8f0;
+    padding: 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.assignment-box:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* Buttons & Inputs */
+.view-btn {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+.file-input-custom {
+    font-size: 0.8rem;
+    color: var(--primary);
+}
+
+/* AI Assistant */
+#ai-assistant {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#chat-header {
+    background: var(--primary);
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#chat-window {
+    background: white;
+    height: 400px;
+    display: none;
+    /* Controlled by JS */
+    flex-direction: column;
+}
+
+#chat-content {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.msg {
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    max-width: 80%;
+}
+
+.bot-msg {
+    background: #f1f5f9;
+    align-self: flex-start;
+}
+
+.user-msg {
+    background: var(--primary);
+    color: white;
+    align-self: flex-end;
+}
+
+.chat-input-area {
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+    border-top: 1px solid #eee;
+}
+
+.chat-input-area input {
+    flex: 1;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 8px 15px;
+    outline: none;
+}
+
+.chat-input-area button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.reset-link {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%;
+    text-decoration: underline;
+}
+/* Timetable Button Styling */
+.timeTableM {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.timeTableM button {
+    width: 100%;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+    font-family: 'Inter', sans-serif;
+}
+
+.timeTableM button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+    filter: brightness(1.1);
+}
+
+.timeTableM button::before {
+    content: '\f073'; /* FontAwesome Calendar Icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+}
+
+@media (max-width: 900px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+}

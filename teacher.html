@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard | SmartStudy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="teacher.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <i class="fa-solid fa-graduation-cap-line"></i>
+            <h2>Teacher Dashboard</h2>
+        </div>
+        <div class="nav-right">
+            <div class="user-profile">
+                <i class="fa-solid fa-circle-user"></i>
+                <span>Professor</span>
+            </div>
+            <button onclick="mainPage()" class="logout-btn">
+                <i class="fa-solid fa-right-from-bracket"></i> Logout
+            </button>
+        </div>
+    </nav>
+
+    <div class="dashboard-grid">
+        <aside class="stats-panel">
+            <div class="stat-card">
+                <i class="fa-solid fa-file-arrow-up"></i>
+                <div>
+                    <h4 id="count-assignments">0</h4>
+                    <p>Assignments</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-users"></i>
+                <div>
+                    <h4 id="count-submissions">0</h4>
+                    <p>Submissions</p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <section class="card upload-section">
+                <h3><i class="fa-solid fa-plus-circle"></i> Create New Assignment</h3>
+                <div class="input-group">
+                    <input type="text" id="title" placeholder="Assignment Title (e.g. Physics Quiz 1)">
+                    <input type="date" id="date">
+                </div>
+                <div class="file-upload-wrapper">
+                    <input type="file" id="file" accept="application/pdf" hidden>
+                    <label for="file" class="file-label">
+                        <i class="fa-solid fa-cloud-arrow-up"></i> 
+                        <span>Click to upload PDF instructions</span>
+                    </label>
+                </div>
+                <button class="primary-btn" onclick="uploadAssignment()">Publish Assignment</button>
+            </section>
+
+            <div class="tables-container">
+                <div class="card table-card">
+                    <h3><i class="fa-solid fa-list-check"></i> Recent Assignments</h3>
+                    <div id="assignmentList" class="list-container">
+                        <div class="empty-state">No assignments published.</div>
+                    </div>
+                </div>
+
+                <div class="card table-card">
+                    <h3><i class="fa-solid fa-paper-plane"></i> Student Submissions</h3>
+                    <div id="submissionList" class="list-container">
+                        <div class="empty-state">Waiting for submissions...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3><i class="fa-solid fa-pen-nib"></i> Digital Grading Mode</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <iframe id="pdf" src=""></iframe>
+            <div class="modal-footer">
+                <div class="score-input">
+                    <label>Award Score:</label>
+                    <input type="number" id="marks" placeholder="0-100">
+                </div>
+                <button class="save-btn" onclick="saveMarks()">Confirm Grade</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="teacher.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>zentable</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>📚 zentable </h1>
+
+<div class="form">
+  <input type="text" id="name" placeholder="Subject Name">
+  <input type="number" id="length" placeholder="Study Hours Needed">
+  <input type="date" id="deadline">
+  
+  <select id="interest">
+    <option value="1">😍 Most Liked</option>
+    <option value="2">🙂 Medium</option>
+    <option value="3">😓 Least Liked</option>
+  </select>
+
+  <button onclick="addTask()">Add Task</button>
+</div>
+
+<br>
+
+<label>Total Study Hours Today:</label>
+<input type="number" id="hours" value="4">
+<label>Exam Date:</label>
+<input type="date" id="examDate">
+
+<br><br>
+<button onclick="generateSchedule()">Generate Smart Schedule</button>
+
+<h2>📅 Today's Plan</h2>
+<ul id="output"></ul>
+
+<script src="script.js"></script>
+</body>
+</html>

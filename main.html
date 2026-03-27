@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Study Planner</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="logo1.jpeg" class="logo" alt="Logo">
+            <span class="brand-name">StudySmart</span>
+        </div>
+        <div class="nav-actions">
+            <button onclick="clearAllData()" class="clear-btn" title="Clear Data">
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+            <i class="fa-solid fa-bars menu-icon"></i>
+        </div>
+    </nav>
+
+    <main class="hero">
+        <h1 class="line">Choose Your Field</h1>
+        <p class="subtitle">Select your role to customize your dashboard</p>
+        
+        <div class="container">
+            <div class="card" onclick="openPage()">
+                <div class="icon-box teacher-icon">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                </div>
+                <h3>Teacher</h3>
+                <p>Manage classes and assignments</p>
+                <button class="btn">Enter</button>
+            </div>
+
+            <div class="card" onclick="studPage()">
+                <div class="icon-box student-icon">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+                <h3>Student</h3>
+                <p>View tasks and track progress</p>
+                <button class="btn">Enter</button>
+            </div>
+        </div>
+    </main>
+    
+    <script src="main.js"></script>
+</body>
+</html>
